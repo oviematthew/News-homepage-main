@@ -22,6 +22,7 @@ body{
 #nav-container {
     height: max-content;
     padding: 50px 0;
+    
 }
 
 
@@ -115,7 +116,8 @@ body{
     #nav-container {
         padding: 50px 20px;
     }
-
+    
+    
 
     /* z-index of 1 for the hamburger menu to be in front of the menu on the right*/
     .hamburger-menu, .toggle-menu {
@@ -159,6 +161,7 @@ body{
         top: 0;
         right: 0;
         width: 300px;
+        padding-top: 100px;
         height: 100vh; 
         background-color: #fff;
     }
