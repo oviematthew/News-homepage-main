@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+body{
+
+    font-family: 'Inter', sans-serif;
+}
+
+
+:root {
+    --soft-orange: #e9ab53;
+    --soft-red: #f15e50;
+    --Off-white: #fffdfa;
+    --Grayish-blue: #c5c6ce;
+    --Dark-grayish-blue: #5d5f79;
+    --Very-dark-blue: #00001a;
+   
+}
+
+
+/* nav Section */
+
+#nav-container {
+    height: max-content;
+    padding: 50px 0;
+}
+
+
+
+
+.nav-right ul {
+    display: flex;
+    
+}
+
+.nav-right ul li {
+    list-style: none;
+    margin-left: 40px;
+}
+
+.navlinks {
+    color: var(--Dark-grayish-blue);
+    text-decoration: none;
+}
+
+.navlinks:hover {
+    color: var(--soft-red);
+}
+
+
+/* Hamburger Menu */
+
+
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    width: 30px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 8px;
+    margin-bottom: 3px;
+    transition: 0.3s;
+}
+
+.hamburger-menu:nth-child(2), .hamburger-menu:nth-child(4) {
+    width: 25px; 
+}
+
+ 
+
+
+
+/* z-index of 3 to place the checkbox in front of the hamburger bar to be checked for the animation */
+.toggle-menu {
+    position: absolute;
+    cursor: pointer;
+    width: 40px;
+    top: 0;
+    height: 60px;
+    opacity: 0;
+    z-index: 3;
+}
+
+
+.hamburger-menu, .toggle-menu {
+    display: none;
+}
+
+
+/* ~ selects hamburger menu as the next sibling of the input element */
+.nav-right input:checked ~ .hamburger-menu:nth-child(3) {
+    background-color: transparent;
+}
+
+
+
+.nav-right input:checked ~ .hamburger-menu:nth-child(2) {
+   top: 10px;
+   width: 30px;
+   transform: rotate(-45deg);
+}
+
+
+.nav-right input:checked ~ .hamburger-menu:nth-child(4) {
+    top: 0;
+    width: 30px;
+    transform: rotate(45deg);
+ }
+
+
+/* Style for mobile screens */
+ @media only screen and (max-width: 800px){
+    
+    #nav-container {
+        padding: 50px 20px;
+    }
+
+
+    /* z-index of 1 for the hamburger menu to be in front of the menu on the right*/
+    .hamburger-menu, .toggle-menu {
+        display: block;
+        z-index: 1;
+    }
+    
+    /* Z index of 2 for the checkbox to be in front of the hamburger icons so they can be clicked easily */
+    .toggle-menu {
+        z-index: 2;
+    }
+    
+
+    /* When viewed on mobile screens, menu will be hidden in overflow by default with right set to -300px */
+   .nav-right .nav-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh; 
+        background-color: #fff;
+        transition: 0.2s ease-out;
+    }
+
+    /* Alternatively, this also sets the menu to none on mobile screen but without a transition */
+    /* .nav-right .nav-menu {
+        display: none;
+    } */
+
+    /* when the hamburger menu is clicked, the nav menu is shown, and will transition smoothly from the right by 300px */
+    .nav-right input:checked ~ .nav-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100vh; 
+        background-color: #fff;
+    }
+
+    .nav-menu li {
+        padding-bottom: 30px;
+        font-weight: 500;
+    }
+
+    
+ }
+
+ 
+/* Hamburger End */
+/* End Nav */
+
+
+
+
+/* Mid-section */
+
+/* Main COntent */
+.main-img {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.main-img-mobile {
+    display: none;
+}
+
+
+.web3-h1 {
+    font-weight: 800;
+    color: var(--Very-dark-blue);
+    font-size: 60px;
+    width: 80%;
+}
+
+.web3-p {
+    color: var(--Dark-grayish-blue);
+    font-weight: 400;
+}
+
+
+.main-button {
+    background-color: var(--soft-red);
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: var(--Off-white);
+    padding: 10px 30px;
+    margin-top: 50px;
+    
+}
+
+.main-button:hover{
+    background-color: var(--Very-dark-blue);
+}
+
+@media only screen and (max-width: 1000px){
+
+    .main-button  {
+        margin: 30px 0;
+    }
+
+    .web3-h1 { 
+        width: 100%;
+        margin-top: 10px;
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+.main-img-mobile {
+    display: block;
+    width: 100%;
+}
+
+.main-img {
+    display: none;
+}
+    
+
+}
+/* Aside Content */
+
+.dark-card {
+    background-color: var(--Very-dark-blue);
+    padding: 20px 30px;
+}
+
+.aside-h1 {
+    color: var(--soft-orange);
+    font-weight: 700;
+}
+
+.card-h4 {
+    color: #fffdfa;
+    font-weight: 500;
+    margin-top: 50px;
+    
+}
+
+.card-h4:hover {
+    color: var(--soft-orange);
+    cursor: pointer;
+}
+
+.card-p {
+    color: var(--Grayish-blue);
+    width: 90%;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.card-rule {
+    color: var(--Grayish-blue);
+    
+}
+
+
+/* End mid-section */
+
+
+/* Bottom Section */
+
+.btm-section {
+    margin-top: 50px;
+}
+
+#btm-div {
+    display: flex;
+}
+
+.btm-imgs {
+    height: 150px;
+    margin-right: 30px;
+}
+
+
+.btm-h4 {
+    color: var(--Grayish-blue);
+    font-weight: 800;
+}
+
+
+.btm-h5 {
+    color: var(--Very-dark-blue);
+    font-weight: 700;
+}
+
+.btm-h5:hover {
+    color: var(--soft-red);
+    cursor: pointer;
+}
+
+.btm-p {
+    color: var(--Dark-grayish-blue);
+}
+
+
+@media only screen and (max-width: 1000px){
+
+#btm-div {
+    margin-top: 20px;
+}
+
+}
+
+/* End Bottom Section */
+
+.attribution {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.attribution .copyright {
+    font-weight: 500;
+}
+
+.copyrightlink {
+    color: var(--soft-red);
+    text-decoration: none;
+}
