@@ -161,7 +161,6 @@ body{
         top: 0;
         right: 0;
         width: 300px;
-        padding-top: 100px;
         height: 100vh; 
         background-color: #fff;
     }
@@ -174,6 +173,12 @@ body{
     
  }
 
+ /* Adding padding on mobile menu when orientation for is turned to landscape mode */
+ @media (orientation: landscape) {
+    .nav-right input:checked ~ .nav-menu {
+        padding-top: 150px;
+    }
+ }
  
 /* Hamburger End */
 /* End Nav */
