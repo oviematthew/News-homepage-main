@@ -2,7 +2,7 @@
 
 ![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)
 
-## Hi There! 👋
+## Hello There! 👋
 
 This project was a challenge i found on frontend mentor and since it was under the Html and Css Category only, i decided to build the mobile menu toggle with just css, using a checkbox.
 
